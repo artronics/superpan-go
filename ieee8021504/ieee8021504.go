@@ -9,16 +9,8 @@ type Requester interface {
 }
 
 type mlme struct {
-	DeviceType DeviceType
 }
 
 func (m *mlme) Request(req Requester) error {
 	return req.request(req, m)
 }
-
-type DeviceType int
-
-const (
-	FFD DeviceType = iota
-	RFD
-)

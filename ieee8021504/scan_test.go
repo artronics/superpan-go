@@ -17,7 +17,6 @@ func TestScan_request_should_panic_if_type_assertion_fails(t *testing.T) {
 func TestScan_validate_ED_is_not_supported_in_RFD(t *testing.T) {
 	defer shouldPanic(t)
 	i := IEEE8021504{}
-	i.MLME.DeviceType = RFD
 	i.MLME.Request(ScanRequest{ScanType: ED})
 }
 func shouldPanic(t *testing.T) {
