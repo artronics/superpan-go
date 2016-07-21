@@ -1,7 +1,10 @@
 package main
 
-import "log"
+import (
+	"github.com/artronics/superpan/ieee8021504"
+)
 
 func main() {
-	log.Println("kir")
+	i := ieee8021504.IEEE8021504{}
+	i.MLME.Request(ieee8021504.ScanRequest{})
 }
