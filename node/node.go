@@ -1,12 +1,14 @@
 package node
 
-type Node interface {
-	Start()
+import (
+	"github.com/artronics/superpan/app"
+)
+
+type Node struct {
+	App    *app.App
+	Device *Device
 }
 
-type PanNode struct {
-}
-
-func (p PanNode) Start() {
+func (p *Node) Start() {
 
 }

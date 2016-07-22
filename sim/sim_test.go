@@ -14,7 +14,7 @@ func TestSim_New(t *testing.T) {
 
 func TestSim_AddNode_should_add_node_to_sim(t *testing.T) {
 	sim := New()
-	sim.AddNode(node.PanNode{})
+	sim.AddNode(node.Node{})
 
 	if len(sim.nodes) != 1 {
 		t.Fatalf("expect 1 node but got %d", len(sim.nodes))

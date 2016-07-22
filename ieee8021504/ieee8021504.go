@@ -1,16 +1,15 @@
 package ieee8021504
 
+import "github.com/artronics/superpan/ieee8021504/mlme"
+
 type IEEE8021504 struct {
-	MLME mlme
+	MLME *mlme.MLME
 }
 
-type Requester interface {
-	request(mlmePrimitive interface{}, mlme *mlme) error
-}
+func New() *IEEE8021504 {
+	i := &IEEE8021504{
+		MLME: mlme.New(),
+	}
 
-type mlme struct {
-}
-
-func (m *mlme) Request(req Requester) error {
-	return req.request(req, m)
+	return i
 }
