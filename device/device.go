@@ -1,14 +1,12 @@
 package device
 
 import (
-	"github.com/artronics/superpan/medium"
 	"net"
 )
 
 type Device struct {
 	receiver
 	transmitter
-	medium     *medium.Medium
 	MACAddress MACAddress
 	DeviceType DeviceType
 }
