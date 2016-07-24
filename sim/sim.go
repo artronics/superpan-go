@@ -12,8 +12,13 @@ type sim struct {
 	nodes map[string]Node
 }
 
+func (s *sim)Start() {
+
+}
+
 type Node interface {
 	ID() string
+	Device() *device.Device
 }
 
 type PanNode struct {
@@ -22,6 +27,10 @@ type PanNode struct {
 
 func (n PanNode)ID() string {
 	return string(n.device.MACAddress)
+}
+
+func (n PanNode)Device() *device.Device {
+	return n.device
 }
 
 func (s *sim)addNodes(nodes... Node) {

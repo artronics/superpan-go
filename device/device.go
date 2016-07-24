@@ -7,6 +7,7 @@ import (
 type Device struct {
 	receiver
 	transmitter
+	medium chan Signal
 	MACAddress MACAddress
 	DeviceType DeviceType
 }
@@ -41,6 +42,13 @@ func run() {
 	for {
 		return
 	}
+}
+
+type Power int
+
+type Signal struct {
+	B byte
+	P Power
 }
 
 type MACAddress net.HardwareAddr
